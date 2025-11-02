@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
         // Ensure the game runs at normal speed when starting
         Time.timeScale = 1f;
+        _gameOverCanvas.SetActive(false);
     }
 
     void Update()
