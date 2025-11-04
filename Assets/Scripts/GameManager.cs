@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] private GameObject _gameOverCanvas;
+    [SerializeField] private GameObject _gameOverPanel;
 
     private bool _isGameOver = false;
 
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
         // Ensure the game runs at normal speed when starting
         Time.timeScale = 1f;
-        _gameOverCanvas.SetActive(false);
+        _gameOverPanel.SetActive(false);
     }
 
     void Update()
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         // Show the Game Over UI
-        _gameOverCanvas.SetActive(true);
+        _gameOverPanel.SetActive(true);
 
         _isGameOver = true;
 
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    private void RestartGame()
+    public void RestartGame()
     {
         // Reload scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
